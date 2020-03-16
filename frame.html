@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>框架</title>
+</head>
+<style>
+    .header,.aside,.main,.footer{
+        background-color: pink;
+        border:5px solid gray;
+    }
+
+    .header{
+        margin-top: 100px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 100px;
+        padding-left: 20px;
+        padding-top: 100px;
+    }
+    .header,.footer{    
+        height: 150px;
+    }
+
+    .aside{      
+        width: 350px;
+        float: right;
+    }
+
+    .aside,.main{        
+        height: 400px;
+    }
+
+    .absolute_div{
+        background-color: indianred;
+        border: 5px solid gray;
+        width: 200px;
+        height: 300px;
+        position: absolute;
+        top:200px;
+        left: 400px;
+    }
+
+    body{
+        background-color: red;
+    }
+</style>
+
+
+<body>
+    <header class="header">header</header>
+    <aside class="aside">aside</aside>
+    <section class="main">section</section>
+    <footer class="footer">footer</footer>
+    <div class="absolute_div">absolute position</div>
+
+</body>
+</html>
