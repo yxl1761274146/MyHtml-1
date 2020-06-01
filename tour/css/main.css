@@ -1,0 +1,148 @@
+html {
+    background: #f5f5f5;
+}
+
+body {
+    background-color: white;
+    max-width: 640px;
+    margin: 0 auto;
+    width: 100%;
+    /* position: relatives;*/
+}
+
+h1 {
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    margin-top: 50px;
+}
+
+.qui-header {
+    background-color: #2bab79;
+    height: 60px;
+}
+
+.plcRoutelite {
+    margin-left: 5px;
+}
+
+.pic {
+    border-radius: 50%;
+}
+
+.title {
+    /*position: absolute;*/
+    font-size: 18px;
+    font-weight: bolder;
+    color: white;
+    top: 0px;
+    left: 20px;
+    text-decoration: nowrap;
+    line-height: 48px;
+    margin-left: 42px;
+    /*border: 1px solid black;*/
+}
+
+.bottom {
+    position: absolute;
+    top: 430px;
+    left: 460px;
+}
+
+.bottom2 {
+    position: absolute;
+    top: 810px;
+    left: 460px;
+}
+
+.face {
+    float: left;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 39px;
+    height: 39px;
+}
+
+.day {
+    position: absolute;
+    top: 120px;
+    right: 480px;
+    border-radius: 50%;
+    color: white;
+    background-color: green;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 35px;
+}
+.day2{
+    position: absolute;
+    top: 530px;
+    right: 480px;
+    border-radius: 50%;
+    color: white;
+    background-color: green;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 35px;
+}
+
+em {
+    font-style: normal;
+    font-weight: bolder;
+}
+
+span{
+    margin-left: 30px;
+}
+
+.qui-asider{
+    position: absolute;
+    top:50px;
+    left:242.5px;
+    height: 900px;
+    width: 200px;
+    border: 1px solid black;
+    background-color: #2d3741;
+    
+}
+.nav-aside{
+    padding: 80px 10px;
+}
+ul{
+    list-style: none;
+}
+.nav-aside a{
+    font-size: 16px;
+    color:white;
+    line-height: 44px;
+    text-decoration:none ;
+    padding-left: 65px;
+    display: block;
+}
+
+.nav-aside a:hover{
+    color: white;
+    background-color:#2bab79;
+}
+
+.qui-footer{
+   /* border: 1px solid red ;*/
+    line-height: 20px;
+    text-align: center;
+    height: 60px;
+    background-color: rgb(230, 230, 230);
+}
+
+.qui-footer span{
+   /* margin-left: 60px;*/
+}
+
+.qui-footer a{
+    text-decoration: none;
+    line-height: 60px;
+    color:black;
+    margin-left: 10px;
+    font-size: 10px;
+}
