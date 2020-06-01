@@ -1,0 +1,96 @@
+<style>
+    html {
+        background: white;
+    }
+
+    body {
+        background: white;
+        max-width: 640px;
+        margin: 0 auto;
+
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 50xp;
+        color: honeydew;
+        margin-top: 50px;
+    }
+
+
+    .qui-header {
+        background-color: darkturquoise;
+        height: 60px;
+    }
+
+    .pic {
+        border-radius: 50%;
+    }
+
+    .title {
+        position: absolute;
+        font-size: 18px;
+        font-weight: bolder;
+        color: white;
+        top: 0px;
+        left: 30px;
+        white-space: nowrap;
+        line-height: 40px;
+        margin-left: 30px;
+
+    }
+
+    .bottom {
+        position: absolute;
+        top: 420px;
+
+        left: 380px;
+    }
+
+    .face {
+        float: left;
+        border: white solid 1px;
+        border-radius: 50%;
+        width: 39px;
+        height: 39px;
+    }
+
+    .plc {
+        margin-left: 5px;
+    }
+
+    .day {
+        position: absolute;
+        top: 110px;
+        right: 380px;
+        border-radius: 50%;
+        color: blanchedalmond;
+        background-color: #2bab79;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 35px;
+    }
+
+    .em {
+        font-style: normal;
+        font-weight: bolder;
+
+    }
+    .span{
+        margin-left: 30px;
+    }
+    .qui-aside{
+        height: 800px;
+        width: 200px;
+        border: 1px solid  black;
+        background-color: #2d3741;
+
+    }
+    .nav-aside a{
+        font-size: 16px;
+        color: red;
+        text-decoration: none;
+
+    }
+</style>

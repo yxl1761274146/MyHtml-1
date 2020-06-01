@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var sayHelloObject=function(x){
+            document.writeln("x=",x)
+        }
+      sayHelloObject(518);
+      
+      
+      function sayHello(){
+          document.writeln("hello world");
+          alert("hello world");
+      }
+      sayHello()
+      
+    
+
+       var person =new Object();
+       person.name="chenlaoshi";
+       person.eat=function(){
+           document.writeln('<br>')
+           document.writeln(person.name,"can eat");
+       }
+        person.eat();
+      
+      var function_person=function(name){
+          this.name=name;
+          this.eat=function(){
+              document.writeln('<br>',name,"can eat");
+
+          }
+      }
+      p=new function_person("zhangsan");
+
+      p.eat();          
+
+
+
+      var m=new map([['chenlaoshi']])
+
+
+
+
+    </script>                  
+</body>
+</html>
