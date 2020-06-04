@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ng-show和ng-hide</title>
+</head>
+<body>
+<div ng-app="app">
+    <div ng-controller="maincontroller">
+        <div style="width: 200px;height: 100px;background: red;" 
+        ng-show="mytrue">
+            <p>*ng-show='mytrue'</p>
+        </div>
+
+        <div style="width:200px;height: 100px;background: yellow;"
+        ng-show='myfalse'>
+            <p>*ng-show='myfalse'</p>
+
+        </div>
+
+        <div style='width: 200px;height: 100px;background: blue;'
+        ng-hide='mytrue'>
+        <p>*ng-hide='mytrue'</p>
+        </div>
+
+        <div style="width: 200px;height: 100px;background:green;"
+        ng-hide='myfalse'>
+        <p>*ng-hide='myfalse'</p>
+        </div>
+    </div>
+</div>
+<script src="../angularjs/lib/angular.min.js"></script>
+<script>
+    var app=angular.module('app',[]);
+    app.controller('maincontroller',function($scope){
+        $scope.mytrue=true;
+        $scope.myfalse=false;
+    });
+</script>
+</body>
+</html>

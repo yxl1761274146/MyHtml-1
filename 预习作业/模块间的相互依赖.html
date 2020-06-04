@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模块间的相互依赖</title>
+</head>
+
+<body>
+    <!--绑定demo模块-->
+    <div ng-app="demo">
+        <div ng-controller="maincontroller">
+            {{name}}
+            
+        </div>
+    </div>
+    <script src="../angularjs/lib/angular.min.js"></script>
+    <script>
+        var ctrls=angular.module('ctrls',[]);
+        ctrls.controller("maincontroller",function($scope){
+            $scope.name="张三";
+
+        });
+
+        var demo=angular.module('demo',['ctrls']);
+
+    </script>
+</body>
+
+</html>

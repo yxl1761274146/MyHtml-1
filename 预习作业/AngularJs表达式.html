@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AngularJs表达式</title>
+</head>
+
+<body>
+    <div ng-app="demo">
+        <div ng-controller="maincontroller">
+            <!--hello-->
+            {{kkk}}
+            <br>
+            <!--hello world-->
+            {{kkk+'world'}}
+            <br>
+            <!--2-->
+            {{num+1}}
+            {{fn()}}
+            <br>
+            <!--1+5-->
+            {{fn()+5}}
+            <br>
+            <!--三目运算-->
+            {{boolean?1:5}}
+            <br>
+            <!--数组-->
+            {{arr[2]}}
+
+        </div>
+    </div>
+    <script src="../angularjs/lib/angular.min.js"></script>
+    <script>
+        var demo = angular.module('demo', []);
+        demo.controller("maincontroller", function ($scope) {
+            $scope.kkk = "hello";
+            $scope.num = 1;
+            $scope.fn = function () {
+                return 1;
+            };
+            $scope.boolean = true;
+            $scope.arr = [1, 2, 3, 4, 5];
+        });
+    </script>
+</body>
+
+</html>

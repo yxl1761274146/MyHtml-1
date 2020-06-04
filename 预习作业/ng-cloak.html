@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ng-cloak</title>
+</head>
+<body>
+    <div ng-app='app'>
+        <div ng-controller='maincontroller'>
+
+            <span ng-bind='name' ng-cloak>{{name}}</span>
+
+        </div>
+    </div>
+    <script src="../angularjs/lib/angular.min.js"></script>
+    <script>
+        var app=angular.module('app',[]);
+        app.controller('maincontroller',function($scope){
+            $scope.name='张三';
+        });
+    </script>
+
+    
+</body>
+</html>
