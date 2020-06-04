@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作用域</title>
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="MainController">
+        <input ng-model="name">
+        <h1>{{welcome}}</h1>
+        <button ng-click='say()'>登录</button>
+        <p>单击按钮调用作用域中定义的say()函数</p>
+    </div>
+
+    
+
+    <div ng-app="demo">
+        <div ng-controller="MainController_one">
+            <span>{{name}}</span>
+            <p>*ng-controller="MainController"作用域显示结果：</p>
+            <span>{{mData}}</span>
+            <span>{{dData}}</span>
+            <div ng-controller="DataController">
+                <p>*ng-controller="DataController"作用域显示结果：</p>
+                <span>{{mData}}</span>
+                <span>{{dData}}</span>
+            </div>
+            <!--hello-->
+            {{msg}}
+            <br>
+            <!--hello world-->
+            {{msg+'world'}}
+            <br>
+            <!--2-->
+            {{num+1}}
+            <br>
+            <!--1-->
+            {{fn()}}
+            <br>
+            <!--1+5-->
+            {{fn()+5}}
+            <br>
+            <!--三目运算-->
+            {{boolean?1:5}}
+            <br>
+            <!--数组-->
+            {{arr[2]}}
+        </div>
+    </div>
+    
+
+
+    <div ng-app="demo">
+        <p>*ng-app="demo"作用域显示结果：</p>
+        <span>{{rData}}</span>
+        <span>{{data}}</span>
+        <div ng-controller="MainController">
+            <p>*ng-controller="MainController"作用域显示结果：</p>
+                <span>{{rData}}</span>
+                <span>{{data}}</span>
+        </div>
+
+
+    </div>
+    <div ng-app>
+        请输入内容:<input type="text" ng-model="demo"><br>
+        您输入的内容:{{demo}}
+    </div>
+    <script src="lib/angular.min.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('MainController', function ($scope) {
+            $scope.name = 'lucky';
+            $scope.say = function () {
+                $scope.welcome = 'welcome:' + $scope.name + '!';
+            };
+
+        });
+
+    
+        var ctrls = angular.module('ctrls', []);
+        ctrls.controller('MainController', function ($scope) {
+            $scope.name = "shc";
+        });
+        var demo = angular.module('demo', ['ctrls']);
+
+        var demo=angular.module('demo', []);
+        demo.controller('MainController', function ($scope){
+            $scope.mData="hello MainController";
+        });
+        demo.controller('DataController', function ($scope){
+            $scope.dData="hello DataController";
+        });
+            
+        demo.controller('MainController', function ($scope){
+            $scope.msg='hello';
+            $scope.num=1;
+            $scope.fn=function(){
+                return 1;
+            };
+            $scope.boolean=true;
+            $scope.arr=[1,2,3,4,5];
+
+        });
+
+        var demo = angular.module('demo', []);
+        demo.controller('MainController', function ($scope, $rootScope) {
+            $rootScope.rData = 'hello rootScope';
+            $scope.data = 'hello scope';
+        });
+
+    </script>
+</body>
+
+</html>

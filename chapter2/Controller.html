@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mainController</title>
+    <style>
+            .Mycolor{
+                background-color: pink;
+            }
+            .myDiv{
+                width:100px;
+                font-size: 30px;
+                padding: 30px;
+            }
+            .myBorder{
+                border:5px solid darkgrey;
+            }
+        </style>
+</head>
+<body>
+    
+
+    <div ng-app="app">
+            添加html:
+            <input type="checkbox" ng-model="myVar" ng-init="myVar=false">
+            <div ng-if="myVar">
+                <h1>我来了</h1>
+    
+            </div>
+            <div ng-init="myProperty='by-parent'">
+                {{myProperty}}
+                <div my-directive ng-init="myProperty='by my-child'">
+                    {{myProperty}}
+                </div>
+            </div>
+            <div>
+                <user-info user-name="xiaoming" age='num' speak='sayHello(name)'></user-info>
+            </div>
+        <div ng-controller="mainController">
+            <div style="height: 100px;" ng-style="myStyle">
+                每天都开心
+
+            </div>
+            <div style="height: 100px;" ng-class="classOptions">
+                    要努力向上
+    
+                </div>
+
+            <span ng-bind="message"></span>
+            <br>
+            <button  ng-click="clickHandler()" onclick="onclickHandler()">按钮</button>
+
+
+            <p>在输入框中输入一些信息：</p>
+            <input type="text" ng-change="myFunc()" ng-model="myValue">
+            <p>{{message}}</p>
+            <div ng-switch="name">
+                <div ng-switch-when="zhangsan">
+                    this is zhangsan
+                </div>
+                <div ng-switch-when="lisi">
+                        this is lisi
+                </div>
+                <div ng-switch-default>
+                    no found
+                </div>
+                
+            </div>
+            <span>{{name}}</span>
+            <div my-say-hello></div>
+
+
+
+        </div>
+    </div>
+    <script src="lib/angular.min.js"></script>
+    <script>
+            var app=angular.module('app',[]);
+            app.controller('mainController',function ($scope){
+                $scope.myStyle={
+                    "background-color":"yellow",
+                    "width":"100px",
+                    "font-size":"20px",
+                    "padding":"50px"
+                }
+                $scope.classOptions={
+                    "myColor":true,
+                    "myDiv":true,
+                    "myBorder":true
+                }
+                $scope.message="等待操作";
+                $scope.clickHandler=function (){
+                    $scope.message='ng-click事件被触发'
+            }
+                
+                $scope.myFunc=function(){
+                    $scope.message="输入框被修改了"
+                }
+                $scope.name="lisi"
+                $scope.name='zhangsan'
+                $scope.name="我的属性是name的值"
+    
+    
+            });
+            app.directive('mySayHello',function(){
+                return{
+                    template:"<p>hello world</p>",
+                    replace:false
+                }
+            });
+            app.directive('myDirective',function(){
+                return{
+                    
+                    scope:true
+                }
+            });
+            app.controller('insulate',function($scope){
+                $scope.num='17';
+                $scope.sayHello=function(name){
+                    alert("hello"+name);
+                }
+            });
+            app.directive('userInfo',function(){
+                return{
+                    restrict:'EA',
+                    template:'姓名:<input type="text" ng-model="userName"><br>'+
+                    '年龄：{{age}}<br>'+
+                    '<button class="btn btn-default"ng-click="speak({name:userName})">speaking</button><br>',
+                    scope:{
+                        userName:'@',
+                        age:'=',
+                        speak:'&'
+                    }
+
+                }
+            })
+            function onclickHandler() {
+                console.log("onclick事件被触发")
+            }
+    </script>
+       
+</body>
+</html>
