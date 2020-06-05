@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>根作用域</title>
+</head>
+
+<body>
+<div ng-app="demo">
+        <p>*ng-app="demo"作用域显示结果：</p>
+        <span>{{rDate}}</span>
+        <span>{{date}}</span>
+        <div ng-controller="Maincontroller">
+        <p>* ng-controller="Maincontroller"作用域显示结果：</p>
+        <span>{{rDate}}</span>
+        <span>{{date}}</span>
+        </div>
+</div>
+<script src="../../angularjs/lib/angular.min.js"></script>
+
+
+<script>
+    var demo = angular.module('demo', []);
+    demo.controller('Maincontroller', function ($scope, $rootScope) {
+        $rootScope.rDate = 'hello rootScope';
+        $scope.date = 'hello scope';
+    });
+</script>
+</body>
+</html>
